@@ -34,7 +34,7 @@ function _qAll(tag) {
 ////////////////////////////////////////////////////////////////////
 const setCountryData= async (e)=>{
     try{
-        let res=await fetch('http://battuta.medunes.net/api/country/all/?key=e39ede1b24b5fcfca0cd004a1c2bef6a')
+        let res=await fetch('https://battuta.medunes.net/api/country/all/?key=e39ede1b24b5fcfca0cd004a1c2bef6a')
         if(res.ok){
             let countries=await res.json()
             allCountries=[...countries]
@@ -58,7 +58,7 @@ const countryGenerator=(countries)=>{
 const setRegionData=async (e)=>{
     try{
         let {target:input}=e
-        let res=await fetch(`http://battuta.medunes.net/api/region/${input.value}/all/?key=e39ede1b24b5fcfca0cd004a1c2bef6a`)
+        let res=await fetch(`https://battuta.medunes.net/api/region/${input.value}/all/?key=e39ede1b24b5fcfca0cd004a1c2bef6a`)
         if(res.ok){
             let regions=await res.json()
             regionGenerator(regions)
@@ -114,7 +114,7 @@ class Weather {
     }
     async sendRequest(city,country){
         try{
-            let res= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=86b0bd9b76517148d71f0967cc7de574`)
+            let res= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=86b0bd9b76517148d71f0967cc7de574`)
             if(res.ok){
                 let weatherData=await res.json()
                 let weather=new Weather()
